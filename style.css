@@ -1,0 +1,489 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Chelsea Market', cursive;
+}
+
+body {
+    overflow: hidden;
+}
+
+#particles-js {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(#ca7cca, #a80b81);
+    width: 100vw;
+    height: 100vh;
+}
+
+.heart {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: #a80b81;
+    transform: rotate(45deg);
+    box-shadow: 30px 30px 200px #5a0e5a;
+    animation: animation-core;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    transition: transform 1s ease-in-out;
+    z-index: 3;
+}
+
+.heart::before {
+    content: '';
+    position: absolute;
+    top: -149px;
+    width: 300px;
+    height: 150px;
+    background: #a80b81;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    animation: animation-before;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    z-index: 3; 
+}
+
+.heart::after {
+    content: '';
+    position: absolute;
+    left: -149px;
+    width: 150px;
+    height: 300px;
+    background: #a80b81;
+    border-top-left-radius: 150px;
+    border-bottom-left-radius: 150px;
+    animation: animation-after;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    z-index: 3; 
+}
+
+.big-heart {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: #680e74;
+    transform: rotate(45deg);
+    box-shadow: 30px 30px 200px #fff;
+    animation: big-animation-core;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    transition: transform 1s ease-in-out;
+    z-index: 2;
+}
+
+.big-heart::before {
+    content: '';
+    position: absolute;
+    top: -1499px;
+    width: 400px;
+    height: 200px;
+    background: #5a0e5a;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+    animation: big-animation-before;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    z-index: 2; 
+}
+
+.big-heart::after {
+    content: '';
+    position: absolute;
+    left: -199px;
+    width: 200px;
+    height: 400px;
+    background: #5a0e5a;
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+    animation: big-animation-after;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    z-index: 2; 
+}
+
+.huge-heart {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #680e74;
+    transform: rotate(45deg);
+    box-shadow: 30px 30px 200px #fff;
+    animation: huge-animation-core;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    transition: transform 1s ease-in-out;
+    z-index: 1;
+}
+
+.huge-heart::before {
+    content: '';
+    position: absolute;
+    background: #5a0e5a;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+    animation: huge-animation-before;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    z-index: 2; 
+}
+
+.huge-heart::after {
+    content: '';
+    position: absolute;
+    background: #5a0e5a;
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+    animation: huge-animation-after;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    z-index: 2; 
+}
+
+.heart2 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: #a80b81;
+    transform: rotate(45deg);
+    box-shadow: 30px 30px 200px #5a0e5a;
+}
+
+
+h1 {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform:translate(-50%, -45%);
+    color: white;
+    animation: h1-scale;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: .5s; 
+    font-size: 50px;
+    font-family: 'Chelsea Market', cursive;
+    z-index: 10;
+    transition: opacity 1s ease-in-out;
+    
+}
+
+h1::selection {
+    background: transparent;
+}
+
+h2 {
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform:translate(-50%, -150%);
+    color: white;
+    font-size: 50px;
+    font-family: 'Chelsea Market', cursive;
+    z-index: 10;
+    transition: top 1.3s ease-in-out, opacity 1s ease-in-out;
+}
+
+h2::selection {
+    background: transparent;
+}
+
+#next {
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform:translate(-50%, -50%) scale(0);
+    color: white;
+    font-size: 50px;
+    font-family: 'Chelsea Market', cursive;
+    z-index: 10;
+    transition: top 1.4s ease-in-out, height 1.3s ease-in-out, opacity 1s ease-in-out, transform 1.5s ease-in-out;
+    padding: 5px;
+    overflow: hidden;
+    background: #680e74ae;
+    border: 5px solid #680e74;
+    border-radius: 10%;
+    outline: none;
+}
+
+#next:hover, .heart:hover, h1:hover{
+    cursor: pointer;
+}
+
+#next::selection {
+    background: transparent;
+}
+
+
+#container1 {
+    position: absolute;
+    left: -200%;
+    width: 30vw;
+    height: 100vh;
+    background: #ca7cca;
+    transition: left 4s ease-in-out;
+    z-index: 10;
+}
+
+#container2 {
+    position: absolute;
+    left: 400%;
+    width: 30vw;
+    height: 100vh;
+    background: #ca7cca;
+    transition: left 4s ease-in-out;
+    z-index: 10;
+}
+
+#container3 {
+    position: absolute;
+    top: -200%;
+    width: 50vw;
+    height: 70vh;
+    background: #ca7cca;
+    transition: top 1s ease-in-out, opacity 1s ease-in-out;
+    border: 8px solid #5a0e5a;
+    outline: 4px solid #680e74;
+    outline-offset: 5px;
+    z-index: 10;
+}
+
+#end-container {
+    position: absolute;
+    width: 40vw;
+    height: 60vh;
+    background: #a80b81;
+    border: 10px solid #5a0e5a;
+    transform: scale(0);
+    transition: transform 1s ease-in-out;
+}
+
+h3 {
+    text-align: center;
+    color: white;
+    font-size: 60px;
+}
+
+p {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+#last {
+    font-size: 95px;
+}
+
+#reload {
+    position: absolute;
+    left: 94vw;
+    top: -10vh;
+    padding: 10px;
+    background: #5a0e5a;
+    border: 4px solid #680e74;
+    color: white;
+    border-radius: 10%;
+    transition: top 1s ease-in-out;
+    outline: none;
+}
+
+#reload:hover {
+    cursor: pointer;
+}
+
+@keyframes animation-core {
+    0%{
+        width: 300px;
+        height: 300px;
+    }
+
+    50% {
+        width: 280px;
+        height: 280px;
+    }
+
+    100% {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@keyframes animation-before {
+    0%{
+        width: 300px;
+        height: 150px;
+        top: -149px;
+    }
+
+    50% {
+        width: 280px;
+        height: 130px;
+        top: -129px;
+    }
+
+    100% {
+        width: 300px;
+        height: 150px;
+        top: -149px;
+    }
+}
+
+
+@keyframes animation-after {
+    0%{
+        width: 150px;
+        height: 300px;
+        left: -149px;
+    }
+
+    50% {
+        width: 130px;
+        height: 280px;
+        left: -129px;
+    }
+
+    100% {
+        width: 150px;
+        height: 300px;
+        left: -149px;
+    }
+}
+
+@keyframes big-animation-core {
+    0%{
+        width: 350px;
+        height: 350px;
+    }
+
+    50% {
+        width: 330px;
+        height: 330px;
+    }
+
+    100% {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@keyframes big-animation-before {
+    0%{
+        width: 350px;
+        height: 175px;
+        top: -179px;
+    }
+
+    50% {
+        width: 330px;
+        height: 155px;
+        top: -159px;
+    }
+
+    100% {
+        width: 350px;
+        height: 175px;
+        top: -179px;
+    }
+}
+
+
+@keyframes big-animation-after {
+    0%{
+        width: 175px;
+        height: 350px;
+        left: -179px;
+    }
+
+    50% {
+        width: 155px;
+        height: 330px;
+        left: -159px;
+    }
+
+    100% {
+        width: 175px;
+        height: 350px;
+        left: -179px;
+    }
+}
+
+@keyframes huge-animation-core {
+    0%{
+        width: 400px;
+        height: 400px;
+    }
+
+    50% {
+        width: 380px;
+        height: 380px;
+    }
+
+    100% {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@keyframes huge-animation-before {
+    0%{
+        width: 400px;
+        height: 200px;
+        top: -209px;
+    }
+
+    50% {
+        width: 380px;
+        height: 180px;
+        top: -189px;
+    }
+
+    100% {
+        width: 400px;
+        height: 200px;
+        top: -209px;
+    }
+}
+
+
+@keyframes huge-animation-after {
+    0%{
+        width: 200px;
+        height: 400px;
+        left: -209px;
+    }
+
+    50% {
+        width: 180px;
+        height: 380px;
+        left: -189px;
+    }
+
+    100% {
+        width: 200px;
+        height: 400px;
+        left: -209px;
+    }
+}
+
+@keyframes h1-scale {
+    0%{
+        top: 41%;
+        transform: translate(-50%, -41%);
+        text-shadow: 0 0 10px white;
+    }
+
+    50% {
+        top: 39%;
+        transform: translate(-50%, -39%);
+        text-shadow: 0 0 20px white;
+    }
+
+    100% {
+        top: 41%;
+        transform: translate(-50%, -41%);
+        text-shadow: 0 0 10px white;
+    }
+}
